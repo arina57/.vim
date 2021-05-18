@@ -1,7 +1,7 @@
 set mouse=a
 let mapleader=","
 set encoding=UTF-8
-
+set number
 call plug#begin()
 
 	"A collection of language packs for Vim.
@@ -32,7 +32,6 @@ call plug#begin()
 
 	Plug 'airblade/vim-gitgutter'
 
-
 	Plug 'bling/vim-airline'
 
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -48,6 +47,8 @@ set termguicolors
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 nnoremap <silent> <leader>c} c}:call NERDComment('x', 'toggle')<CR>
+
+
 
 set splitbelow
 filetype plugin on
