@@ -1,5 +1,6 @@
 set mouse=a
 let mapleader=","
+set encoding=UTF-8
 
 call plug#begin()
 
@@ -33,6 +34,11 @@ call plug#begin()
 
 
 	Plug 'bling/vim-airline'
+
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+
+	Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 colorscheme space_vim_theme
@@ -68,6 +74,7 @@ set ttimeoutlen=50
 let g:airline_theme = 'solarized'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#hunks#enabled=1
+"let g:airline_statusline_ontop=1
 let g:airline#extensions#branch#enabled=1
 
 if !exists('g:airline_symbols')
