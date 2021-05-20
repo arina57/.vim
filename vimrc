@@ -2,6 +2,8 @@ set mouse=a
 let mapleader=","
 set encoding=UTF-8
 set number
+set clipboard=unnamed
+
 call plug#begin()
 
 	"A collection of language packs for Vim.
@@ -13,7 +15,7 @@ call plug#begin()
 	" theme
 	Plug 'liuchengxu/space-vim-theme'
 
-	" Auto complete
+	"" Auto complete
 	Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 
 	"tree display
@@ -48,7 +50,8 @@ set termguicolors
 autocmd VimEnter * NERDTree | wincmd p
 nnoremap <silent> <leader>c} c}:call NERDComment('x', 'toggle')<CR>
 
-
+"let g:ale_sign_priority=30 
+"let g:gitgutter_sign_priority=10
 
 set splitbelow
 filetype plugin on
@@ -82,3 +85,8 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+let NERDTreeShowHidden=1
+
+
