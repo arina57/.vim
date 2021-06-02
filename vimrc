@@ -40,8 +40,21 @@ call plug#begin()
 	Plug 'junegunn/fzf.vim'
 
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'puremourning/vimspector'
 
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'mattn/vim-lsp-settings'
+
+	Plug 'universal-ctags/ctags'
+	Plug 'ludovicchabant/vim-gutentags'
+
+	Plug 'brookhong/cscope.vim'
 call plug#end()
+
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
+
 colorscheme space_vim_theme
 hi Comment guifg=#5C6370
 set termguicolors
@@ -89,4 +102,12 @@ let g:airline_symbols.space = "\ua0"
 autocmd BufEnter NERD_tree_* | execute 'normal R'
 let NERDTreeShowHidden=1
 
+"Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+
+"Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
