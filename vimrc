@@ -111,3 +111,8 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
+"Set the cursor
+let &t_SI = "\033[5 q"
+let &t_SR = "\033[2 q"
+let &t_EI = "\033[2 q"
+
