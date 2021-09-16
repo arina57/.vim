@@ -1,5 +1,11 @@
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-brew install cscope
+which -s brew
+if [[ $(command -v brew) != ""]] ; then
+  brew update
+	brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+	brew install cscope
+elif [[ $(command -v apt-get) != ""]] ; then
+fi
+
 
 mkdir ~/src/
 cd ~/src/
@@ -21,3 +27,5 @@ make distclean
             --prefix=/usr/local
 make
 sudo make install
+
+ln -nfs ~/.vim/vimrc ~/.vimrc

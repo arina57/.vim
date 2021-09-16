@@ -48,6 +48,11 @@ call plug#begin()
 	Plug 'universal-ctags/ctags'
 	Plug 'ludovicchabant/vim-gutentags'
 
+	Plug 'OmniSharp/omnisharp-vim'
+
+
+	Plug 'liuchengxu/vim-clap'
+
 	Plug 'brookhong/cscope.vim'
 call plug#end()
 
@@ -104,6 +109,10 @@ let NERDTreeShowHidden=1
 
 "Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
+
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
 
 "Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
