@@ -13,10 +13,10 @@ call plug#begin()
 	Plug 'dense-analysis/ale' 
 
 	" theme
-	Plug 'liuchengxu/space-vim-theme'
+"	Plug 'liuchengxu/space-vim-theme'
 
 	"" Auto complete
-	Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 
 	"tree display
 	Plug 'preservim/nerdtree'
@@ -27,20 +27,20 @@ call plug#begin()
 	"Xml tag helper
 	Plug 'sukima/xmledit'
 	
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+"	Plug 'vim-airline/vim-airline'
+"	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'tpope/vim-fugitive'
 
 	Plug 'airblade/vim-gitgutter'
 
-	Plug 'bling/vim-airline'
+"	Plug 'bling/vim-airline'
 
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 
 	Plug 'ryanoasis/vim-devicons'
-	Plug 'puremourning/vimspector'
+"	Plug 'puremourning/vimspector'
 
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'mattn/vim-lsp-settings'
@@ -53,16 +53,16 @@ call plug#begin()
 
 	Plug 'liuchengxu/vim-clap'
 
-	Plug 'brookhong/cscope.vim'
+"	Plug 'brookhong/cscope.vim'
 call plug#end()
 
 set foldmethod=expr
   \ foldexpr=lsp#ui#vim#folding#foldexpr()
   \ foldtext=lsp#ui#vim#folding#foldtext()
 
-colorscheme space_vim_theme
-hi Comment guifg=#5C6370
-set termguicolors
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
@@ -93,16 +93,6 @@ set t_Co=256
 ":AirlineTheme dark
 
 set ttimeoutlen=50
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg='dark'
-let g:airline#extensions#hunks#enabled=1
-"let g:airline_statusline_ontop=1
-let g:airline#extensions#branch#enabled=1
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
 
 autocmd BufEnter NERD_tree_* | execute 'normal R'
 let NERDTreeShowHidden=1
